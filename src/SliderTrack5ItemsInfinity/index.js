@@ -1,0 +1,99 @@
+import React, { useState } from 'react'
+import cn from 'classnames'
+import classes from './Slider.module.scss'
+import { img } from '../SliderData/SliderData'
+import { ArrowButton } from '../Components/ArrowButton'
+
+const SliderTrack5ItemsInfinity = () => {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [animation, setAnimation] = useState(0)
+
+  const setAnimationTimeout = () => {
+    setTimeout(() => {
+      setAnimation(0)
+    }, 1000) // equal to animation speed
+  }
+
+  const nextHandler = () => {
+    setAnimation(1)
+    setActiveIndex((current) => {
+      const res = current === img.length - 1 ? 0 : current + 1
+      return res
+    })
+    setAnimationTimeout()
+  }
+
+  const prevHandler = () => {
+    setAnimation(1)
+    setActiveIndex((current) => {
+      const res = current === 0 ? img.length - 1 : current - 1
+      return res
+    })
+    setAnimationTimeout()
+  }
+
+  const prevImgIndex = activeIndex === 0 ? img.length - 1 : activeIndex - 1
+  const prev2ImgIndex = prevImgIndex === 0 ? img.length - 1 : prevImgIndex - 1
+  const prev3ImgIndex = prev2ImgIndex === 0 ? img.length - 1 : prev2ImgIndex - 1
+
+  const nextImgIndex = activeIndex === img.length - 1 ? 0 : activeIndex + 1
+  const next2ImgIndex = nextImgIndex === img.length - 1 ? 0 : nextImgIndex + 1
+  const next3ImgIndex = next2ImgIndex === img.length - 1 ? 0 : next2ImgIndex + 1
+
+  return (
+    <div>
+      <h3>Slider Track 5 Items Infinity</h3>
+      <div className={classes.SliderContainer}>
+        <div className={classes.Slider}>
+          <div
+            className={cn(classes.Img, classes.ImgPrev3)}
+            key={prev3ImgIndex}
+          >
+            {img[prev3ImgIndex]}
+          </div>
+          <div
+            className={cn(classes.Img, classes.ImgPrev2)}
+            key={prev2ImgIndex}
+          >
+            {img[prev2ImgIndex]}
+          </div>
+          <div className={cn(classes.Img, classes.ImgPrev)} key={prevImgIndex}>
+            {img[prevImgIndex]}
+          </div>
+          <div className={classes.Img} key={activeIndex}>
+            {img[activeIndex]}
+          </div>
+          <div className={cn(classes.Img, classes.ImgNext)} key={nextImgIndex}>
+            {img[nextImgIndex]}
+          </div>
+          <div
+            className={cn(classes.Img, classes.ImgNext2)}
+            key={next2ImgIndex}
+          >
+            {img[next2ImgIndex]}
+          </div>
+          <div
+            className={cn(classes.Img, classes.ImgNext3)}
+            key={next3ImgIndex}
+          >
+            {img[next3ImgIndex]}
+          </div>
+        </div>
+        <ArrowButton
+          text="<"
+          direction="Prev"
+          onClick={prevHandler}
+          disabled={animation}
+        />
+        <ArrowButton
+          text=">"
+          direction="Next"
+          onClick={nextHandler}
+          disabled={animation}
+        />
+      </div>
+    </div>
+  )
+}
+
+export default SliderTrack5ItemsInfinity

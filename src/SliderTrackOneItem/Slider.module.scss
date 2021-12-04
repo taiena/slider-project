@@ -1,0 +1,21 @@
+.Slider {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 300px;
+}
+
+.Track {
+  width: 200px;
+  height: 200px;
+  background-color: #eee;
+  display: flex;
+  overflow: hidden;
+}
+
+.Item {
+  transition: 1s;
+}

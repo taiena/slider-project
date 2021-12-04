@@ -1,0 +1,96 @@
+.Slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.Track {
+  height: 100px;
+  background-color: #eee;
+  display: flex;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 220px) {
+  .Track {
+    width: 200px
+  }
+  .Slider {
+    width: 200px
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .Track {
+    width: 300px
+  }
+  .Slider {
+    width: 300px
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .Track {
+    width: 400px
+  }
+  .Slider {
+    width: 400px
+  }
+}
+
+@media screen and (min-width: 520px) {
+  .Track {
+    width: 500px
+  }
+  .Slider {
+    width: 500px
+  }
+}
+
+@media screen and (min-width: 620px) {
+  .Track {
+    width: 600px
+  }
+  .Slider {
+    width: 600px
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .Track {
+    width: 700px
+  }
+  .Slider {
+    width: 700px
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .Track {
+    width: 800px
+  }
+  .Slider {
+    width: 800px
+  }
+}
+
+@media screen and (min-width: 920px) {
+  .Track {
+    width: 900px
+  }
+  .Slider {
+    width: 900px
+  }
+}
+
+.Item {
+  min-width: 100px;
+  height: 100%;
+  border-radius: 50%;
+  background-color: greenyellow;
+  text-align: center;
+  vertical-align: middle;
+  transition: 1s;
+}

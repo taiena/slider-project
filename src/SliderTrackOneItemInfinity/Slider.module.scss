@@ -1,0 +1,39 @@
+.SliderContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  margin: auto;
+}
+
+.Slider {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.Img {
+  position: absolute;
+  width: 100%;
+  transition: all 1s;
+
+  & img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.ImgPrev {
+  transform: translateX(-100px);
+}
+
+.ImgNext {
+  transform: translateX(100px);
+}
